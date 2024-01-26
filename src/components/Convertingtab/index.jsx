@@ -27,7 +27,7 @@ const Convertingtab = () => {
             }
             event.preventDefault()
             const response = await getConvResponse(fromCur,toCur,amount)
-            const result = (response.value).toFixed(2)
+            const result = (response.value)
             convElem.textContent = `${amount} ${fromCur} = ${result} ${toCur}`
         }
     }
