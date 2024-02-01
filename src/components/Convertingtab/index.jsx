@@ -11,7 +11,7 @@ const Convertingtab = () => {
         const fromCur = document.getElementById("fromCurrency").value
         const toCur = document.getElementById("toCurrency").value
         const convElem = document.getElementById("convertResult")
-
+        
         if (event.key === "Enter" || event.type === "click") {
             if (!amount) {
                 event.preventDefault()
@@ -34,13 +34,10 @@ const Convertingtab = () => {
 
     return (
         <>
-            <div className='py-4 px-8 bg-gray-100 shadow-xl text-start w-full'>
-                <h1 className="">
-                    Amount :
-                </h1>
+            <div className='py-4 px-8 bg-gray-100 shadow-xl text-start w-full h-auto'>
+                <h1>Amount :</h1>
                 <form onSubmit={handleConvert}
-                    onKeyDown={handleConvert}
-                >
+                    onKeyDown={handleConvert}>
                     <input placeholder='0'
                         className='w-full p-1.5 left-0 right-0 rounded-md h-12'
                         ref={searchRef}
@@ -49,7 +46,7 @@ const Convertingtab = () => {
                 </form>
                 <div className="grid grid-cols-2 my-3 h-12 text-gray-700">
                     <div className="grid grid-rows-1 mx-1">
-                        <select id="fromCurrency" className="rounded-md">
+                        <select id="fromCurrency" className="rounded-md hover:bg-gray-200 duration-200">
                             <option value="">from..</option>
                             <option value="USD">USD</option>
                             <option value="IDR">IDR</option>
@@ -58,7 +55,7 @@ const Convertingtab = () => {
                         </select>
                     </div>
                     <div className="grid my grid-rows-1 mx-1 h-12 text-gray-700">
-                        <select id="toCurrency" className="rounded-md">
+                        <select id="toCurrency" className="rounded-md hover:bg-gray-200 duration-200">
                             <option value="">to..</option>
                             <option value="USD">USD</option>
                             <option value="IDR">IDR</option>
@@ -68,7 +65,7 @@ const Convertingtab = () => {
                     </div>
                 </div>
                 <button
-                    className="border mb-2 w-full p-1.5 h-12 left-0 right-0 rounded-xl bg-white"
+                    className="border mb-2 w-full p-1.5 h-12 left-0 right-0 rounded-xl bg-white hover:bg-orange-300 duration-200"
                     onClick={handleConvert}
                 >
                     Convert
